@@ -1,0 +1,42 @@
+[
+    {
+        "title": "7UP 250ML STRAWBERRY LEMONADE",
+        "price": 100,
+        "barcodes": 8964002343775,
+        "sku": 1530639,
+        "max_sale_qty": 10,
+        "active": 0,
+        "category": "Beverages",
+        "class": "Soft Drinks"
+    },
+    {
+        "title": "7UP 345ML STRAWBERRY LEMONADE",
+        "price": 80,
+        "barcodes": 8964002343782,
+        "sku": 1531079,
+        "max_sale_qty": 10,
+        "active": 0,
+        "category": "Beverages",
+        "class": "Soft Drinks"
+    },
+    {
+        "title": "7UP 500ML",
+        "price": 110,
+        "barcodes": 8964000101087,
+        "sku": 87799,
+        "max_sale_qty": 10,
+        "active": 0,
+        "category": "Beverages",
+        "class": "Soft Drinks"
+    },
+    {
+        "title": "7UP 500ML STRAWBERRY LEMONADE",
+        "price": 110,
+        "barcodes": 8964002343799,
+        "sku": 1530395,
+        "max_sale_qty": 10,
+        "active": 0,
+        "category": "Beverages",
+        "class": "Soft Drinks"
+    }
+]

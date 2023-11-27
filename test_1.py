@@ -9,7 +9,7 @@ BaseCase.main(__name__, __file__)
 
 config = configparser.ConfigParser()
 
-config.read('config_dev.ini')
+config.read('config.ini')
 
 panda_email = config.get('Panda_Cred', 'email')
 panda_pass = config.get('Panda_Cred', 'password')
@@ -58,3 +58,8 @@ class MyTestClass(BaseCase):
         self.click("//button[normalize-space()='Add to My Products']")
         time.sleep(1)
         self.click("//button[normalize-space()='Add']")
+        time.sleep(20)
+        self.open('https://foodpanda.portal.restaurant/store-management')
+        time.sleep(5)
+        self.scroll_to_bottom()
+        time.sleep(30)
