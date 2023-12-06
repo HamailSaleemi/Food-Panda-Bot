@@ -9,7 +9,7 @@ SAVE_BUTTON = "//button[@class='MuiButtonBase-root MuiIconButton-root MuiIconBut
 FORMAT_CATEGORY = "//span[normalize-space()='{0}']"
 FORMAT_CLASS = "//span[normalize-space()='{0}']"
 # Product path
-product_path = '/home/hamail/Desktop/Projects/Food Panda boot/product2.xlsx'
+product_path = '/home/hamail/Desktop/Projects/Food Panda boot/products.xlsx'
 
 # Read Products
 df = pd.read_excel(product_path)

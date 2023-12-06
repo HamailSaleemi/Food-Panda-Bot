@@ -2,29 +2,20 @@ from seleniumbase import BaseCase
 import time
 import pytest
 from helper import products, CATEGORY_BUTTON, APPLY_BUTTON, SAVE_BUTTON, FORMAT_CATEGORY, FORMAT_CLASS
-import configparser
 import json
+from base_class import BaseFunctionalityClass
 
-BaseCase.main(__name__, __file__)
 
-config = configparser.ConfigParser()
+class MyTestClass(BaseFunctionalityClass):
 
-config.read('config.ini')
 
-panda_email = config.get('Panda_Cred', 'email')
-panda_pass = config.get('Panda_Cred', 'password')
-
-class MyTestClass(BaseCase):
     @pytest.mark.run(order=1)
     def test_demo_site(self):
-        self.open("https://foodpanda.portal.restaurant/login")
-        self.maximize_window()
-        print('open panda portal')
-        self.type("//input[@id='login-email-field']", panda_email)
-        self.type("//input[@id='login-password-field']", panda_pass)
-        self.click("//button[@id='button_login']")
-        print('login complete')
-        time.sleep(10)
+        self.login()
+
+
+    @pytest.mark.run(after='test_demo_site')
+    def test_create_product(self):
         self.open('https://foodpanda.portal.restaurant/store-management/product-search?vendor=FP_PK;efp3')
         time.sleep(5)
         failedProducts = []
@@ -32,7 +23,7 @@ class MyTestClass(BaseCase):
             self.type("//input[contains(@placeholder,'Search for Products')]", product['barcodes'])
             try:
                 self.wait_for_element(".MuiGrid-root.MuiGrid-container.MuiGrid-spacing-xs-undefined.MuiGrid-grid-xs-12.ehh1dcx1.css-1vm7xg0", timeout=100)
-                self.type("input[placeholder='SKU:']", product['sku'])
+                # self.type("input[placeholder='SKU:']", product['sku'])
                 self.type("input[placeholder='Max Qty']", product['max_sale_qty'])
                 self.type("input[placeholder='Price']", product['price'])
                 print(product['title'], 'belong to category ', product['category'])

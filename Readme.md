@@ -18,7 +18,7 @@ pip install -r requirement.txt
 
 **Once everything is done run command**
 ```bash
-pytest test_1.py --gui --verbose --html=report.html --full-trace
+pytest test_create_product.py --gui --verbose --html=report.html --full-trace
 ```
 > **--gui** = to open browser on frontend and see all the process
 >
